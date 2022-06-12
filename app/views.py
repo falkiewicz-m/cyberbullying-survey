@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .forms import surveyPL, surveyEN
 from django.forms.formsets import formset_factory
 from .models import QuestionPL, QuestionEN, ChoicePL, ChoiceEN, Current_answerPL, Current_answerEN
+from .content import content
+
 
 def surveyPLview(request):
     if request.method == 'POST':
@@ -47,19 +49,46 @@ def excludeCSRF(dict, csrft):
     return {k:v for k,v in dict if k not in csfrt}
 
 def indexPLview(request):
-    return render(request, 'indexPL.html')
+    context = {
+        'lang': 'pl',
+        'title': 'Strona główna',
+        'content' : content[0]
+    }
+
+    return render(request, 'indexPL.html', {'context' : context })
 
 def indexENview(request):
-    return render(request, 'indexEN.html')
+    context = {
+        'lang': 'en',
+        'title': 'Main page',
+        'content' : content[1]
+    }
+    return render(request, 'indexEN.html', {'context' : context })
 
 def thanksPLview(request):
-    return render(request, 'thanksPL.html')
+    context = {
+        'lang': 'pl',
+        'title': 'Dziękuję!'
+    }
+    return render(request, 'thanksPL.html', {'context' : context })
 
 def thanksENview(request):
-    return render(request, 'thanksEN.html')
+    context = {
+        'lang': 'en',
+        'title': 'Thanks!'
+    }
+    return render(request, 'thanksEN.html', {'context' : context })
 
 def resultsPLview(request):
-    return render(request, 'resultsPL.html')
+    context = {
+        'lang': 'pl',
+        'title': 'Wyniki'
+    }
+    return render(request, 'resultsPL.html', {'context' : context })
 
 def resultsENview(request):
-    return render(request, 'resultsEN.html')
+    context = {
+        'lang': 'en',
+        'title': 'Results'
+    }
+    return render(request, 'resultsEN.html', {'context' : context })
