@@ -1,5 +1,6 @@
 <!<!DOCTYPE html>
 {% load static %}
+
 <html lang="{{ context.lang }}">
   <head>
     <meta charset="utf-8">
@@ -7,6 +8,15 @@
     <title>{{ context.title }}</title>
   </head>
   <body class="is-loading">
+    <nav id="flags">
+      {% if context.lang == 'en' %}
+      <a href="{{ context.otherURL }}"><img src="{% static 'pl.png' %}"></img></a>
+      <a href="{{ context.currentURL }}"><img src="{% static 'uk.png' %}"></img></a>
+      {% else %}
+      <a href="{{ context.currentURL }}"><img src="{% static 'pl.png' %}"></img></a>
+      <a href="{{ context.otherURL }}"><img src="{% static 'uk.png' %}"></img></a>
+      {% endif %}
+    </nav>
     <div id="wrapper" class="fade-in">
       <div id="intro">
         {% if context.lang == 'en' %}
