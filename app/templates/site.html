@@ -4,11 +4,16 @@
 <html lang="{{ context.lang }}">
   <head>
     <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="{% static 'main.css' %}"/>
     <title>{{ context.title }}</title>
   </head>
   <body class="is-loading">
     <nav id="flags">
+<<<<<<< Updated upstream
+=======
+        <ul>
+>>>>>>> Stashed changes
       {% if context.lang == 'en' %}
       <a href="{{ context.otherURL }}"><img src="{% static 'pl.png' %}"></img></a>
       <a href="{{ context.currentURL }}"><img src="{% static 'uk.png' %}"></img></a>
@@ -16,15 +21,19 @@
       <a href="{{ context.currentURL }}"><img src="{% static 'pl.png' %}"></img></a>
       <a href="{{ context.otherURL }}"><img src="{% static 'uk.png' %}"></img></a>
       {% endif %}
+<<<<<<< Updated upstream
+=======
+        </ul>
+>>>>>>> Stashed changes
     </nav>
     <div id="wrapper" class="fade-in">
       <div id="intro">
         {% if context.lang == 'en' %}
           <h1>Survey</h1>
-          <p>Health and social consequences of surveillance cameras in public spaces</p>
+          <h2>Health and social consequences of surveillance cameras in public spaces</p>
         {% else %}
           <h1>Ankieta</h1>
-          <p>Społeczne i zdrowotne konsekwencje wynikające z obecności kamer w przestrzeni publicznej</p>
+          <h2>Społeczne i zdrowotne konsekwencje wynikające z obecności kamer w przestrzeni publicznej</p>
         {% endif %}
       </div>
       <nav id="nav">
