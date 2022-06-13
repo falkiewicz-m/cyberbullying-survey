@@ -35,7 +35,7 @@
         </ul>
       </nav>
       <div id="main">
-        {% block content %}{% endblock %}
+        <p>{{ context.content |safe }}</p>
       </div>
       <div id="footer">
         <ul>

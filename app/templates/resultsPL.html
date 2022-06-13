@@ -7,7 +7,7 @@
 <script src="https://code.highcharts.com/js/themes/grid-light.js"></script>
 
 {% block content %}
-<p></p>
+<p><p>{{ context.content |safe }}</p></p>
 {% endblock %}
 {% block links %}
 <li><a href="/pl/">Strona główna</a></li>
